@@ -1,0 +1,23 @@
+{
+  "name": "kingdoms-game",
+  "private": true,
+  "version": "0.1.0",
+  "description": "MVP: 3 AI-driven factions in one persistent world. Menu-based jobs, real-time chat, LLM sentiment diplomacy.",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "npm run dev -w client",
+    "start": "npm run start -w server",
+    "build": "npm run build -w client",
+    "check:caravans": "node server/scripts/caravan-check.mjs",
+    "check:ui": "npm run check:render -w client",
+    "check": "npm run check:caravans && npm run check:ui"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}

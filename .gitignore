@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-ssr/
+.render-check-state.json
+.DS_Store
+*.log
+
+# local database + env
+data/
+server/.env
+server/database.sqlite
+server/database.sqlite-*
+
